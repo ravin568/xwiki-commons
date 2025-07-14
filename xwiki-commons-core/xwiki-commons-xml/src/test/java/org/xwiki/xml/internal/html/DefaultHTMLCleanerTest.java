@@ -377,16 +377,17 @@ public class DefaultHTMLCleanerTest
             /*"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">\n"
                 + "  <head>\n"*/
                 "<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\">"
-                        + "<head>\n"
+                + "<head>\n"
                 + "    <title>Title test</title>\n"
                 + "  </head>"
                 + "  <body>\n"
                 + "    <p>before</p>\n"
                /* + "    <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"300\" width=\"500\">\n"*/
-                + "    <p><svg xmlns=\"http://www.w3.org/2000/svg\" height=\"300\" width=\"500\">\n"
+                + "      <p><svg xmlns=\"http://www.w3.org/2000/svg\" height=\"300\" width=\"500\">\n"
                 + "      <g>\n"
                 + "        <title>SVG Title Demo example</title>\n"
                 + "        <rect height=\"50\" style=\"fill:none; stroke:blue; stroke-width:1px\" width=\"200\" x=\"10\" "
+                //+ "y=\"10\"></rect>\n" + "      </g>\n" + "    </svg></p>\n" + "    <p>after</p>\n";
                 + "y=\"10\"></rect>\n" + "      </g>\n" + "    </svg></p>\n" + "    <p>after</p>\n";
         assertEquals(HEADER + input + FOOTER,
             HTMLUtils.toString(this.cleaner.clean(new StringReader(input))));
