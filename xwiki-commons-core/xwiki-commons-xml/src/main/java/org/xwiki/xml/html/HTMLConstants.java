@@ -369,4 +369,10 @@ public interface HTMLConstants
      * HTML rel attribute.
      */
     String ATTRIBUTE_REL = "rel";
+
+    /**
+     * HTML &lt;nav&gt; tag.
+     * @since 14.0RC1
+     */
+    String TAG_NAV = "nav";
 }

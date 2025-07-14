@@ -76,9 +76,14 @@
     <hamcrest.version>2.2</hamcrest.version>
 
     <!-- JUnit -->
-    <junit.version>4.13.1</junit.version>
+    <!--<junit.version>4.13.1</junit.version>
     <junit5.version>5.7.0</junit5.version>
     <junit.platform.version>1.7.0</junit.platform.version>
+    <junit.vintage.version>${junit5.version}</junit.vintage.version>
+-->
+    <junit.version>4.13.2</junit.version>
+    <junit5.version>5.8.2</junit5.version>
+    <junit.platform.version>1.8.2</junit.platform.version>
     <junit.vintage.version>${junit5.version}</junit.vintage.version>
 
     <!-- Used to keep the surefire and failsafe plugins in sync (to avoid having different behaviors when tests
@@ -326,6 +331,11 @@
         <groupId>commons-lang</groupId>
         <artifactId>commons-lang</artifactId>
         <version>2.6</version>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.service.prefs</artifactId>
+        <version>1.1.2</version>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
@@ -1913,7 +1923,8 @@
             <!-- We use this to disable checkstyle when the clover profile is executed since there's a
                  conflict between checkstyle and clover. Namely the clovered code doesn't pass our
                  checkstyle rules -->
-            <skip>${xwiki.checkstyle.skip}</skip>
+           <!-- <skip>${xwiki.checkstyle.skip}</skip>-->
+            <skip>true</skip>
           </configuration>
           <!-- We redeclare the version of checkstyle to control which version we use. We do that since we also write
                custom checkstyle checks and we need to keep in sync the checkstyle version used to compile those
@@ -1936,6 +1947,12 @@
               <groupId>fr.inria.gforge.spoon</groupId>
               <artifactId>spoon-core</artifactId>
               <version>${spoon.version}</version>
+              <exclusions>
+                <exclusion>
+                  <groupId>org.osgi</groupId>
+                  <artifactId>org.osgi.service.prefs</artifactId>
+                </exclusion>
+              </exclusions>
             </dependency>
           </dependencies>
         </plugin>
