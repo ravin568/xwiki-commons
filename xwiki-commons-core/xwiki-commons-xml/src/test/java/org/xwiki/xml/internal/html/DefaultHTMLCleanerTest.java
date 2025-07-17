@@ -344,31 +344,6 @@ public class DefaultHTMLCleanerTest
     }
 
 
-    /**
-     * Verify that the restricted parameter forbids dangerous attributes and tags.
-     */
-    // @Test
-    // void restrictedAttributesAndTags() throws Exception
-    // {
-    //     Map<String, String> parameters = new HashMap<>(this.cleanerConfiguration.getParameters());
-    //     parameters.put("restricted", "true");
-    //     this.cleanerConfiguration.setParameters(parameters);
-
-    //     assertHTML("<p><img src=\"img.png\" /></p>", "<img onerror=\"alert(1)\" src=img.png />");
-    //     assertHTML("<p><a>Hello!</a></p>", "<a href=\"javascript:alert(1)\">Hello!</a>");
-    //     assertHTML("<p></p>", "<iframe src=\"whatever\"/>");
-
-    //     // Check that SVG is still working in restricted mode.
-    //     cleanSVGTags();
-    //     cleanTitleWithNamespace();
-
-    //     // Check that MathML is still working in restricted mode.
-    //     assertHTML("<p><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtext>X</mtext><mi><span>foo</span>"
-    //                     + "</mi></math></p>",
-    //             "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><span></span><mtext>X</mtext><mi><span>foo</span>"
-    //                     + "</mi></math>");
-    // }
-
     @Test
     void restrictedAttributesAndTags() throws Exception
     {
