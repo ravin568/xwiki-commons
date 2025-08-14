@@ -37,10 +37,17 @@ import org.xwiki.xml.internal.html.filter.FontFilter;
 import org.xwiki.xml.internal.html.filter.LinkFilter;
 import org.xwiki.xml.internal.html.filter.ListFilter;
 import org.xwiki.xml.internal.html.filter.ListItemFilter;
-
+import org.xwiki.configuration.internal.RestrictedConfigurationSourceProvider;
+import org.xwiki.xml.internal.html.DefaultHTMLElementSanitizer;
+import org.xwiki.xml.internal.html.HTMLDefinitions;
+import org.xwiki.xml.internal.html.HTMLElementSanitizerConfiguration;
+import org.xwiki.xml.internal.html.MathMLDefinitions;
+import org.xwiki.xml.internal.html.SVGDefinitions;
+import org.xwiki.xml.internal.html.SecureHTMLElementSanitizer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.xwiki.xml.internal.html.filter.SanitizerFilter;
 
 /**
  * Unit tests for {@link org.xwiki.xml.html.HTMLUtils}.
@@ -57,6 +64,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
     BodyFilter.class,
     AttributeFilter.class,
     ControlCharactersFilter.class,
+    SanitizerFilter.class,
+    DefaultHTMLElementSanitizer.class,
+    SecureHTMLElementSanitizer.class,
+    HTMLElementSanitizerConfiguration.class,
+    RestrictedConfigurationSourceProvider.class,
+    HTMLDefinitions.class,
+    MathMLDefinitions.class,
+    SVGDefinitions.class,
     DefaultHTMLCleaner.class,
     DefaultExecution.class
 })
